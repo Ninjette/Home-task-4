@@ -1,0 +1,13 @@
+.movie{
+	display: block;
+	border: 1px solid grey;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 4px;
+	&__media{
+		border: 1px solid #000;
+	}
+	&--desired{
+		background-color: pink;
+	}
+}

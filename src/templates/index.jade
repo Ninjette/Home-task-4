@@ -1,0 +1,41 @@
+doctype html
+html
+	head
+		- var page_name = "Temp"
+		include ./includes/head.jade
+
+	body
+		include ./includes/header.jade
+
+		main(ng-app="moviesApp")
+			section.section-search(ng-controller="mainController")
+				.container
+					.row
+					//- 	form(action="")
+					hr
+					h2.text-center Movie search
+					.form-inline.text-center
+						input( type="text", ng-model="input").form-control
+						button(ng-click="searchFunc(input); show='true'").btn.btn-success submit
+						hr
+					//- desired 
+					.movie.clearfix.movie--desired(ng-repeat="item in desired")
+						.movie__media-wrap.pull-left
+							//- img(ng-src="{{media}}")
+							img(src="http://img.omdbapi.com/?i=tt2294629&apikey=402c455d")
+						.movie__info.pull-left
+							h2 Name: {{item.Title}}
+							h5 Type {{item.Type}}
+							h5 Year: {{item.Year}}
+					//- search result
+					.movie.clearfix(ng-show="show", ng-repeat="movie in movies")
+						.movie__media-wrap.pull-left
+							//- img(ng-src="{{media}}")
+							img(ng-src="http://img.omdbapi.com/?i={{movie.imdbID}}&apikey={{apiKey}}")
+						.movie__info.pull-left
+							h2 Name: {{movie.Title}}
+							h5 Type {{movie.Type}}
+							h5 Year: {{movie.Year}}
+							//- .btn.btn-info(ng-click="addToDesired(movie, movie.Title)") add to desired
+
+		include ./includes/footer.jade
