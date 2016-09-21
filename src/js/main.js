@@ -42,33 +42,15 @@ app.controller('mainController', function($scope, dataService){
 				var pagesAmount = results.substring(0, results.length - 1);
 
 				for (var i = 0; i <= pagesAmount; i++) {
-					// var pageLink = "http://www.omdbapi.com/?s="+ 'batman' +"&page="+(i+1);
 					$scope.pages.push({num: i+1});
 				};
-
-				// $scope.pages = 
-			}	
+			}
 		}, input);
 	};
-	//pagination
-	// $scope.pages = [
-	// {
-	// 	num: 1
-	// },
-	// {
-	// 	num: 2
-	// }
-	// ]
+
 	// Desired
 	$scope.elemMask = 'elem_';
-	$scope.desired = [
-		// {
-		// 	Title: 'title_1'
-		// },
-		// {
-		// 	Title: 'title_2'
-		// }
-	];
+	$scope.desired = [];
 	$scope.showDesired = function(){
 		$scope.lsLength = localStorage.length;
 		if ($scope.lsLength > 0) {
@@ -106,35 +88,12 @@ app.controller('mainController', function($scope, dataService){
 
 			localStorage.setItem($scope.elemMask + $scope.elemId, JSON.stringify(movie));
 		};
-
-		//idea 
-		// if ! one from $scope.desired imdbID === movie.imdbID{
-		//	all underneth
-		//}
 	}
-
-
-	// idea for(var i = 0; localstorage.length; i++)
-	// retrive[i]
-
-	/*
-	app.controller('ReviewController',function(){
-		this.review = {};
-		this.addReview = function(product){
-			product.reviews.push(this.review);
-			this.review = {};
-		}
-	})
-	*/
-
-
-	var testObject = { 'one': 1, 'two': 2, 'three': 3 };
-
-	// Put the object into storage
-	localStorage.setItem('testObject', JSON.stringify(testObject));
-
-	// Retrieve the object from storage
-	var retrievedObject = localStorage.getItem('testObject');
-
-	console.log('retrievedObject: ', JSON.parse(retrievedObject));
 });
+
+
+//ideas space
+	//var obj= document.createElement('select');
+	//obj.style.width= "100px";
+	// var element = document.querySelector('.pagination__item');
+	// element.style.width= "100px";

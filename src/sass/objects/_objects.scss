@@ -24,26 +24,26 @@
 }
 .pagination{
 	text-align: center;
+	margin: 10px 0 30px;
 	&__item{
 		list-style: none;
 		display: inline-block;
 	}
 	&__number{
 		display: block;
+		border: 1px solid grey;
 		width: 30px;
 		height: 30px;
 		line-height: 30px;
 		transition: background-color .25s ease-out,
 					color .25s ease-out;
-		&:hover{
+		&:hover,
+		&:focus{
 			text-decoration: none;
 			color: #fff;
+			background-color: grey;
 			transition: background-color 0s,
 						color 0s;
-		}
-		border: 1px solid grey;
-		&:hover{
-			background-color: grey;
 		}
 	}
 }
