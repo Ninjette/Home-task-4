@@ -2,12 +2,48 @@
 	display: block;
 	border: 1px solid grey;
 	margin-bottom: 20px;
-	padding: 20px;
+	padding: 10px 90px 10px 10px;
 	border-radius: 4px;
+	position: relative;
 	&__media{
 		border: 1px solid #000;
 	}
 	&--desired{
-		background-color: pink;
+		background-color: #FFEDF0;
+	}
+	&__label{
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: 1px solid grey;
+		font-weight: bold;
+		padding: 5px;
+		margin: 5px;
+		border-radius: 3px;
+	}
+}
+.pagination{
+	text-align: center;
+	&__item{
+		list-style: none;
+		display: inline-block;
+	}
+	&__number{
+		display: block;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		transition: background-color .25s ease-out,
+					color .25s ease-out;
+		&:hover{
+			text-decoration: none;
+			color: #fff;
+			transition: background-color 0s,
+						color 0s;
+		}
+		border: 1px solid grey;
+		&:hover{
+			background-color: grey;
+		}
 	}
 }

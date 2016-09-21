@@ -24,18 +24,23 @@ html
 							//- img(ng-src="{{media}}")
 							img(src="http://img.omdbapi.com/?i=tt2294629&apikey=402c455d")
 						.movie__info.pull-left
-							h2 Name: {{item.Title}}
+							.movie__label Desired
+							h3 Name: {{item.Title}}
 							h5 Type {{item.Type}}
 							h5 Year: {{item.Year}}
 					//- search result
 					.movie.clearfix(ng-show="show", ng-repeat="movie in movies")
 						.movie__media-wrap.pull-left
-							//- img(ng-src="{{media}}")
 							img(ng-src="http://img.omdbapi.com/?i={{movie.imdbID}}&apikey={{apiKey}}")
 						.movie__info.pull-left
-							h2 Name: {{movie.Title}}
+							h3 Name: {{movie.Title}}
 							h5 Type {{movie.Type}}
 							h5 Year: {{movie.Year}}
-							//- .btn.btn-info(ng-click="addToDesired(movie, movie.Title)") add to desired
+							.btn.btn-info(ng-click="addToDesired(movie)") add to desired
+					ul.pagination
+						li.pagination__item(ng-repeat="page in pages")
+							button(ng-click="changePage(page.num)").pagination__number {{page.num}}
+							//- ng-href="{{page.href}}"
+
 
 		include ./includes/footer.jade
