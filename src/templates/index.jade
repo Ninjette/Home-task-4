@@ -14,8 +14,9 @@ html
 					hr
 					h2.text-center Movie search
 					.form-inline.text-center
-						input( type="text", ng-model="input").form-control
-						button(ng-click="searchFunc(input); show='true'").btn.btn-success submit
+						.search
+							input( type="text", ng-model="input").form-control
+							button(ng-click="searchFunc(input); show='true'").btn.btn-success submit
 						hr
 					//- desired 
 					.movie.clearfix.movie--desired(ng-repeat="item in desired")

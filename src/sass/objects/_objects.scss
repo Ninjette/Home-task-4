@@ -1,3 +1,12 @@
+.search{
+	padding: 8px;
+	border: 1px solid lighten(grey, 20);
+	display: inline-block;
+	border-radius: 5px;
+}
+.form-inline .form-control{
+	margin-right: 5px;
+}
 .movie{
 	display: block;
 	border: 1px solid grey;
@@ -28,6 +37,12 @@
 	&__item{
 		list-style: none;
 		display: inline-block;
+	}
+	&__item:first-child &__number{
+		border-radius: 5px 0 0 5px;
+	}
+	&__item:last-child &__number{
+		border-radius: 0 5px 5px 0;
 	}
 	&__number{
 		display: block;
