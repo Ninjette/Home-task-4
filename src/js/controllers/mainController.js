@@ -2,9 +2,8 @@ export {controllerFunc}
 
 function controllerFunc($scope, dataService){
 	$scope.show = false;
-	$scope.apiKey = '402c455d';
-	$scope.media = null;
 	$scope.desired = {};
+	$scope.propertyName = "Year";
 	let inputData;
 
 	$scope.changePage = function(page){
